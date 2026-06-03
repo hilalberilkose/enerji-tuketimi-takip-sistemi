@@ -16,7 +16,9 @@
             <li><a href="#">Raporlar</a></li>
             <li><a href="#">İletişim</a></li>
         </ul>
-    </nav><header>
+    </nav><div class="tema-alani">
+        <button id="temaButonu">🌙 Karanlık Mod</button>
+    </div><header>
         <h1>Enerji Tüketimi Takip Sistemi</h1>
         <p>Enerji kullanımını analiz edin, takip edin ve tasarruf sağlayın.</p>
     </header><section class="cards">
@@ -36,6 +38,9 @@
     </section><section class="grafik">
         <h2>Aylık Enerji Kullanımı</h2>
         <canvas id="enerjiGrafik"></canvas>
+    </section><section class="grafik">
+        <h2>Aylık Enerji Maliyeti</h2>
+        <canvas id="maliyetGrafik"></canvas>
     </section><section class="hakkinda">
         <h2>Sistem Hakkında</h2><p>
             Bu sistem enerji tüketim verilerini izlemek,
@@ -51,6 +56,10 @@
             <li>Yalıtıma önem verin.</li>
             <li>Elektrik tüketimini düzenli takip edin.</li>
         </ul>
+    </section><section class="hesaplayici">
+        <h2>Enerji Maliyet Hesaplayıcı</h2><input type="number" id="gunlukTuketim" placeholder="Günlük Tüketim (kWh)"><input type="number" id="birimFiyat" placeholder="1 kWh Fiyatı (TL)"><button onclick="hesapla()">Hesapla</button>
+
+        <h3 id="sonuc"></h3>
     </section><section class="iletisim">
         <h2>İletişim</h2><form>
             <input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><textarea placeholder="Mesajınız"></textarea><button type="submit">Gönder</button>
