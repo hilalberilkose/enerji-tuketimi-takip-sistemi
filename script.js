@@ -1,61 +1,59 @@
-const ctx = document.getElementById('enerjiGrafik');
+// SAAT
+function saat() {
+    document.getElementById("saat").innerText =
+        new Date().toLocaleString("tr-TR");
+}
+setInterval(saat, 1000);
+saat();
 
-new Chart(ctx, {
-    type: 'line',
+// GRAFİK 1
+new Chart(document.getElementById("chart1"), {
+    type: "line",
     data: {
-        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+        labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran"],
         datasets: [{
-            label: 'Enerji Tüketimi (kWh)',
+            label: "kWh",
             data: [820, 760, 910, 700, 640, 780],
-            tension: 0.4
+            borderColor: "green"
         }]
-    },
-    options: {
-        responsive: true
     }
 });
 
-const maliyetCtx = document.getElementById('maliyetGrafik');
-
-new Chart(maliyetCtx, {
-    type: 'bar',
+// GRAFİK 2
+new Chart(document.getElementById("chart2"), {
+    type: "bar",
     data: {
-        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+        labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran"],
         datasets: [{
-            label: 'Enerji Maliyeti (TL)',
-            data: [2500, 2300, 2900, 2100, 1900, 2400]
+            label: "TL",
+            data: [2500, 2300, 2900, 2100, 1900, 2400],
+            backgroundColor: "green"
         }]
-    },
-    options: {
-        responsive: true
     }
 });
 
-document.getElementById('temaButonu')
-    .addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-    });
+// DARK MODE
+document.getElementById("temaBtn").onclick = () => {
+    document.body.classList.toggle("dark");
+};
 
-function hesapla() {
+// RAPOR İNDİR
+function raporIndir() {
 
-    let tuketim = parseFloat(
-        document.getElementById('gunlukTuketim').value
-    );
+    const text = `
+ENERJI RAPORU
 
-    let fiyat = parseFloat(
-        document.getElementById('birimFiyat').value
-    );
+Aylik Tuketim: 960 kWh
+Günlük: 32 kWh
+Tasarruf: %18
 
-    if (isNaN(tuketim) || isNaN(fiyat)) {
-        document.getElementById('sonuc').innerHTML =
-            'Lütfen tüm alanları doldurun';
-        return;
-    }
+Durum: Sistem normal çalışıyor
+`;
 
-    let aylik = tuketimfiyat30;
+    const blob = new Blob([text], { type: "text/plain" });
+    const a = document.createElement("a");
 
-    document.getElementById('sonuc').innerHTML =
-        'Aylık Tahmini Maliyet: ' +
-        aylik.toFixed(2) +
-        ' TL';
+    a.href = URL.createObjectURL(blob);
+    a.download = "enerji_raporu.txt";
+    a.click();
 }
