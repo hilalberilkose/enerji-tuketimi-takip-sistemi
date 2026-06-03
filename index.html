@@ -4,68 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enerji Tüketimi Takip Sistemi</title>
-
     <link rel="stylesheet" href="style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
     <nav>
         <ul>
             <li><a href="#">Ana Sayfa</a></li>
-            <li><a href="#">Sistem Hakkında</a></li>
+            <li><a href="#">Sistem</a></li>
             <li><a href="#">Veriler</a></li>
-            <li><a href="#">Grafikler</a></li>
+            <li><a href="#">Raporlar</a></li>
             <li><a href="#">İletişim</a></li>
         </ul>
-    </nav>
-
-    <header>
+    </nav><header>
         <h1>Enerji Tüketimi Takip Sistemi</h1>
-        <p>Enerji kullanımını analiz edin ve tasarruf sağlayın.</p>
-    </header>
-
-    <section class="cards">
-
+        <p>Enerji kullanımını analiz edin, takip edin ve tasarruf sağlayın.</p>
+    </header><section class="cards">
         <div class="card">
-            <h2>Günlük Tüketim</h2>
+            <h3>Günlük Tüketim</h3>
             <p>32 kWh</p>
-        </div>
-
-        <div class="card">
-            <h2>Aylık Tüketim</h2>
+        </div><div class="card">
+            <h3>Aylık Tüketim</h3>
             <p>960 kWh</p>
-        </div>
-
-        <div class="card">
-            <h2>Tasarruf</h2>
+        </div><div class="card">
+            <h3>Tasarruf Oranı</h3>
             <p>%18</p>
+        </div><div class="card">
+            <h3>Karbon Azaltımı</h3>
+            <p>240 kg</p>
         </div>
-
-    </section>
-
-    <section class="grafik">
-        <h2>Aylık Enerji Tüketimi</h2>
+    </section><section class="grafik">
+        <h2>Aylık Enerji Kullanımı</h2>
         <canvas id="enerjiGrafik"></canvas>
-    </section>
-
-    <section class="hakkinda">
-        <h2>Sistem Hakkında</h2>
-
-        <p>
-            Bu proje enerji tüketim verilerinin izlenmesi,
-            analiz edilmesi ve raporlanması amacıyla geliştirilmiştir.
-            Kullanıcılar enerji kullanım trendlerini takip ederek
-            tasarruf fırsatlarını değerlendirebilir.
+    </section><section class="hakkinda">
+        <h2>Sistem Hakkında</h2><p>
+            Bu sistem enerji tüketim verilerini izlemek,
+            analiz etmek ve raporlamak amacıyla geliştirilmiştir.
+            Kullanıcılar enerji kullanım alışkanlıklarını
+            inceleyerek verimlilik sağlayabilir.
         </p>
-    </section>
+    </section><section class="oneriler">
+        <h2>Enerji Tasarrufu Önerileri</h2><ul>
+            <li>LED aydınlatma kullanın.</li>
+            <li>Kullanılmayan cihazları kapatın.</li>
+            <li>Enerji verimli cihazlar tercih edin.</li>
+            <li>Yalıtıma önem verin.</li>
+            <li>Elektrik tüketimini düzenli takip edin.</li>
+        </ul>
+    </section><section class="iletisim">
+        <h2>İletişim</h2><form>
+            <input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><textarea placeholder="Mesajınız"></textarea><button type="submit">Gönder</button>
 
-    <footer>
+        </form>
+    </section><footer>
         <p>2025 Enerji Tüketimi Takip Sistemi</p>
     </footer>
-
     <script src="script.js"></script>
-
 </body>
 </html>
