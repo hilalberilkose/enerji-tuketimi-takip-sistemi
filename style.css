@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial,sans-serif;
     background: #f4f6f9;
 }
 
@@ -10,10 +10,10 @@ nav {
 }
 
     nav ul {
-        list-style: none;
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 25px;
+        list-style: none;
         margin: 0;
         padding: 0;
     }
@@ -27,47 +27,63 @@ nav {
 header {
     background: #0f172a;
     color: white;
+    padding: 60px;
     text-align: center;
-    padding: 40px;
 }
 
 .cards {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     margin: 30px;
-    flex-wrap: wrap;
 }
 
 .card {
     background: white;
-    width: 250px;
+    width: 220px;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
     text-align: center;
 }
 
-    .card h2 {
-        color: #22c55e;
-    }
-
-.grafik {
-    width: 80%;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.hakkinda {
+.grafik,
+.hakkinda,
+.oneriler,
+.iletisim {
     width: 80%;
     margin: 30px auto;
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+    .oneriler li {
+        margin-bottom: 10px;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 footer {
@@ -75,5 +91,5 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
