@@ -4,70 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enerji Takip Sistemi</title>
-
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-
     <nav>
-        <div class="logo">⚡ Enerji Paneli</div>
-
-        <ul>
+        <div class="logo">
+            ⚡ Enerji Paneli
+        </div><ul>
             <li><a href="#anasayfa">Ana Sayfa</a></li>
+            <li><a href="hakkinda.html">Sistem Hakkında</a></li>
             <li><a href="#veri">Veriler</a></li>
             <li><a href="#rapor">Rapor</a></li>
             <li><a href="#iletisim">İletişim</a></li>
-        </ul>
+        </ul><button id="temaBtn">
+            🌙
+        </button>
+    </nav><section class="login">
+        <h2>Yönetici Girişi</h2><input id="kullanici"
+                                       placeholder="Kullanıcı Adı">
 
-        <button id="temaBtn">🌙</button>
-    </nav>
+        <input id="sifre"
+               type="password"
+               placeholder="Şifre">
 
-    <header id="anasayfa">
-        <h1>Enerji Tüketim Dashboard</h1>
-        <p id="saat"></p>
-    </header>
+        <button onclick="girisYap()">
+            Giriş Yap
+        </button><p id="girisSonuc"></p>
+    </section><header id="anasayfa"><h1>Enerji Tüketim Dashboard</h1><p id="saat"></p></header><div id="uyari"></div><section class="cards">
+        <div class="card">
+            Günlük
+            <br>
+            <b id="gunluk">32 kWh</b>
+        </div><div class="card">
+            Aylık
+            <br>
+            <b id="aylik">960 kWh</b>
+        </div><div class="card">
+            Tasarruf
+            <br>
+            <b>%18</b>
+        </div><div class="card">
+            Maliyet
+            <br>
+            <b>2400 TL</b>
+        </div>
+    </section><section id="veri" class="panel">
+        <h2>Enerji Tüketim Grafiği</h2><canvas id="chart1"></canvas>
 
-    <section class="cards">
+    </section><section class="panel">
+        <h2>Enerji Maliyet Grafiği</h2><canvas id="chart2"></canvas>
 
-        <div class="card">Günlük<br><b>32 kWh</b></div>
-        <div class="card">Aylık<br><b>960 kWh</b></div>
-        <div class="card">Tasarruf<br><b>%18</b></div>
-        <div class="card">Maliyet<br><b>2400 TL</b></div>
+    </section><section id="rapor" class="panel">
+        <h2>Enerji Raporu</h2><p>
+            Enerji tüketim özet raporunu indirebilirsiniz.
+        </p><button onclick="raporIndir()">
+            📄 Rapor İndir
+        </button>
+    </section><section class="panel">
+        <h2>Enerji Maliyet Hesaplayıcı</h2><input type="number"
+                                                  id="gunlukTuketim"
+                                                  placeholder="Günlük Tüketim (kWh)">
 
-    </section>
+        <input type="number"
+               id="birimFiyat"
+               placeholder="1 kWh Fiyatı (TL)">
 
-    <section id="veri" class="panel">
-        <h2>Enerji Grafiği</h2>
-        <canvas id="chart1"></canvas>
-    </section>
+        <button onclick="hesapla()">
+            Hesapla
+        </button><h3 id="sonuc"></h3>
+    </section><section id="iletisim" class="panel">
+        <h2>İletişim</h2><input type="text"
+                                placeholder="Ad Soyad">
 
-    <section class="panel">
-        <h2>Maliyet Grafiği</h2>
-        <canvas id="chart2"></canvas>
-    </section>
+        <input type="email"
+               placeholder="E-posta">
 
-    <section id="rapor" class="panel">
-        <h2>Rapor</h2>
-        <p>Enerji tüketim raporunu indirebilirsiniz.</p>
-        <button onclick="raporIndir()">📄 İndir</button>
-    </section>
-
-    <section id="iletisim" class="panel">
-        <h2>İletişim</h2>
-
-        <input type="text" placeholder="Ad Soyad">
-        <input type="email" placeholder="E-posta">
-<textarea placeholder="Mesaj"></textarea>
-
-        <button>Gönder</button>
-    </section>
-
-    <footer>
+<textarea placeholder="Mesaj"></textarea><button>
+            Gönder
+        </button>
+    </section><footer>
         2025 Enerji Takip Sistemi
-    </footer>
 
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
