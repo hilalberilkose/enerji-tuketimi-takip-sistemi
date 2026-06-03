@@ -3,71 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enerji Tüketimi Takip Sistemi</title>
+    <title>Enerji Takip Sistemi</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
+
     <nav>
+        <div class="logo">⚡ Enerji Paneli</div>
+
         <ul>
-            <li><a href="#">Ana Sayfa</a></li>
-            <li><a href="#">Sistem</a></li>
-            <li><a href="#">Veriler</a></li>
-            <li><a href="#">Raporlar</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="#anasayfa">Ana Sayfa</a></li>
+            <li><a href="#veri">Veriler</a></li>
+            <li><a href="#rapor">Rapor</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
-    </nav><div class="tema-alani">
-        <button id="temaButonu">🌙 Karanlık Mod</button>
-    </div><header>
-        <h1>Enerji Tüketimi Takip Sistemi</h1>
-        <p>Enerji kullanımını analiz edin, takip edin ve tasarruf sağlayın.</p>
-    </header><section class="cards">
-        <div class="card">
-            <h3>Günlük Tüketim</h3>
-            <p>32 kWh</p>
-        </div><div class="card">
-            <h3>Aylık Tüketim</h3>
-            <p>960 kWh</p>
-        </div><div class="card">
-            <h3>Tasarruf Oranı</h3>
-            <p>%18</p>
-        </div><div class="card">
-            <h3>Karbon Azaltımı</h3>
-            <p>240 kg</p>
-        </div>
-    </section><section class="grafik">
-        <h2>Aylık Enerji Kullanımı</h2>
-        <canvas id="enerjiGrafik"></canvas>
-    </section><section class="grafik">
-        <h2>Aylık Enerji Maliyeti</h2>
-        <canvas id="maliyetGrafik"></canvas>
-    </section><section class="hakkinda">
-        <h2>Sistem Hakkında</h2><p>
-            Bu sistem enerji tüketim verilerini izlemek,
-            analiz etmek ve raporlamak amacıyla geliştirilmiştir.
-            Kullanıcılar enerji kullanım alışkanlıklarını
-            inceleyerek verimlilik sağlayabilir.
-        </p>
-    </section><section class="oneriler">
-        <h2>Enerji Tasarrufu Önerileri</h2><ul>
-            <li>LED aydınlatma kullanın.</li>
-            <li>Kullanılmayan cihazları kapatın.</li>
-            <li>Enerji verimli cihazlar tercih edin.</li>
-            <li>Yalıtıma önem verin.</li>
-            <li>Elektrik tüketimini düzenli takip edin.</li>
-        </ul>
-    </section><section class="hesaplayici">
-        <h2>Enerji Maliyet Hesaplayıcı</h2><input type="number" id="gunlukTuketim" placeholder="Günlük Tüketim (kWh)"><input type="number" id="birimFiyat" placeholder="1 kWh Fiyatı (TL)"><button onclick="hesapla()">Hesapla</button>
 
-        <h3 id="sonuc"></h3>
-    </section><section class="iletisim">
-        <h2>İletişim</h2><form>
-            <input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><textarea placeholder="Mesajınız"></textarea><button type="submit">Gönder</button>
+        <button id="temaBtn">🌙</button>
+    </nav>
 
-        </form>
-    </section><footer>
-        <p>2025 Enerji Tüketimi Takip Sistemi</p>
+    <header id="anasayfa">
+        <h1>Enerji Tüketim Dashboard</h1>
+        <p id="saat"></p>
+    </header>
+
+    <section class="cards">
+
+        <div class="card">Günlük<br><b>32 kWh</b></div>
+        <div class="card">Aylık<br><b>960 kWh</b></div>
+        <div class="card">Tasarruf<br><b>%18</b></div>
+        <div class="card">Maliyet<br><b>2400 TL</b></div>
+
+    </section>
+
+    <section id="veri" class="panel">
+        <h2>Enerji Grafiği</h2>
+        <canvas id="chart1"></canvas>
+    </section>
+
+    <section class="panel">
+        <h2>Maliyet Grafiği</h2>
+        <canvas id="chart2"></canvas>
+    </section>
+
+    <section id="rapor" class="panel">
+        <h2>Rapor</h2>
+        <p>Enerji tüketim raporunu indirebilirsiniz.</p>
+        <button onclick="raporIndir()">📄 İndir</button>
+    </section>
+
+    <section id="iletisim" class="panel">
+        <h2>İletişim</h2>
+
+        <input type="text" placeholder="Ad Soyad">
+        <input type="email" placeholder="E-posta">
+<textarea placeholder="Mesaj"></textarea>
+
+        <button>Gönder</button>
+    </section>
+
+    <footer>
+        2025 Enerji Takip Sistemi
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
