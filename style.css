@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial,sans-serif;
     background: #f4f6f9;
+    transition: .3s;
 }
 
 nav {
@@ -23,6 +24,18 @@ nav {
         text-decoration: none;
         font-weight: bold;
     }
+
+.tema-alani {
+    text-align: center;
+    padding: 15px;
+}
+
+#temaButonu {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 header {
     background: #0f172a;
@@ -51,7 +64,8 @@ header {
 .grafik,
 .hakkinda,
 .oneriler,
-.iletisim {
+.iletisim,
+.hesaplayici {
     width: 80%;
     margin: 30px auto;
     background: white;
@@ -93,3 +107,18 @@ footer {
     padding: 15px;
     margin-top: 30px;
 }
+
+.dark-mode {
+    background: #111827;
+    color: white;
+}
+
+    .dark-mode .card,
+    .dark-mode .grafik,
+    .dark-mode .hakkinda,
+    .dark-mode .oneriler,
+    .dark-mode .iletisim,
+    .dark-mode .hesaplayici {
+        background: #1f2937;
+        color: white;
+    }
